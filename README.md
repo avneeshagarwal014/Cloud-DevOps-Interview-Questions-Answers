@@ -17,8 +17,12 @@ Ans:- An IAM Group is used to assign common permissions to multiple users, while
 Ques: Difference b/w IAM Group & IAM Role?
 
 Ans:-
-| S.No | IAM Group	                                 | IAM Role
-| 01   | Assigned to IAM users                           | Assumed by users or AWS services
-| 02   | Used to manage permissions for multiple users   | Used to grant temporary permissions
-| 03   | No temporary credentials                        | Uses temporary security credentials
-| 04   | Cannot be attached to EC2/Lambda                | Can be attached to EC2, Lambda, EKS, ECS
+| S.No | IAM Group                                               | IAM Role                                                                       |
+| ---- | ------------------------------------------------------- | ------------------------------------------------------------------------------ |
+| 1    | Assigned to IAM users                                   | Assumed by IAM users or AWS services                                           |
+| 2    | Used to manage permissions for multiple users           | Used to grant temporary permissions                                            |
+| 3    | No temporary credentials                                | Uses temporary security credentials (STS)                                      |
+| 4    | Cannot be attached directly to EC2, Lambda, EKS, or ECS | Can be attached to EC2, Lambda, EKS, ECS, and other AWS services               |
+| 5    | Users become permanent members of a group               | Roles are assumed only when needed                                             |
+| 6    | Best for managing permissions of multiple IAM users     | Best for service-to-service access, cross-account access, and temporary access |
+
